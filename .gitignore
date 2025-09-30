@@ -8,7 +8,7 @@ target/
 build/
 .gradle/
 lib/
-screenshots/
+
 # IntelliJ / VSCode
 .idea/
 *.iml
