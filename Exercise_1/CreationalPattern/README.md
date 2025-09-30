@@ -9,22 +9,47 @@ This project demonstrates two **Creational Design Patterns** with practical, rea
 
 ---
 
-## How It Works
+**Class Structure**
+- **Notification (Interface):** Defines the `send()` method for all notifications.
+- **EmailNotification:** Concrete class for sending email notifications.
+- **SMSNotification:** Concrete class for sending SMS notifications.
+- **PushNotification:** Concrete class for sending push notifications.
+- **NotificationFactory:** Responsible for creating the appropriate notification object.
+- **FactoryPatternDemo:** Client code that demonstrates the use of the factory.
 
-* **Factory Pattern:** A client requests a notification type from the factory (Email, SMS, Push). The factory creates the right object without exposing the instantiation logic. This decouples the client from concrete classes.
-
-* **Singleton Pattern:** A single JobScheduler instance manages all jobs (EmailJob, DataBackupJob, etc.). Multiple parts of the system access the same scheduler, ensuring consistent coordination and avoiding duplicate instances.
+**Sample Output Screenshot**
+![Factory Pattern Output](screenshots/factory_output.png)
 
 ---
 
-## Run Instructions
+### Singleton Pattern
+A single **JobScheduler** instance manages all jobs (EmailJob, DataBackupJob, etc.). Multiple parts of the system access the same scheduler, ensuring consistent coordination and avoiding duplicate instances.
+
+**Class Structure**
+- **Job (Interface):** Defines the `execute()` method for all jobs.
+- **EmailJob:** Represents a job that sends emails.
+- **DataBackupJob:** Represents a job that performs database backups.
+- **JobScheduler (Singleton):** Manages the job queue and ensures only one instance exists.
+- **SingletonJobSchedulerDemo:** Client code that demonstrates the singleton in action.
+
+**Sample Output Screenshot**
+![Singleton Pattern Output](screenshots/singleton_output.png)
+
+---
+
+## Clone and Explore
 
 ```bash
-# Run Factory Pattern
-javac factory/*.java
-java factory.FactoryPatternDemo
+# Clone repository
+git clone https://github.com/Suresh-Kumar13/EI_Coding_Exercise.git
+cd EI_Coding_Exercise/Exercise1
 
-# Run Singleton Pattern
-javac singleton/*.java
-java singleton.SingletonJobSchedulerDemo
-```
+# Explore Factory Pattern
+cd CreationalPattern/factory/NotificationService/src
+javac *.java
+java FactoryPatternDemo
+
+# Explore Singleton Pattern
+cd CreationalPattern/singelton/JobScheduler/src
+javac *.java
+java SingletonJobSchedulerDemo
