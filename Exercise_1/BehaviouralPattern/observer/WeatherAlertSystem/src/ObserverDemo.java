@@ -1,11 +1,10 @@
-// ObserverDemo.java
 
 public class ObserverDemo {
     public static void main(String[] args) {
         WeatherStation station = new WeatherStation();
 
-        WeatherObserver app = new MobileApp("WeatherNow");
-        WeatherObserver news = new NewsAgency("Daily Times");
+        WeatherObserver app = new MobileApp("WeatherApp");
+        WeatherObserver news = new News("NDTV");
         WeatherObserver govt = new GovernmentDepartment("Disaster Management");
 
         station.attach(app);

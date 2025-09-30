@@ -1,4 +1,3 @@
-// GovernmentDepartment.java
 
 public class GovernmentDepartment implements WeatherObserver {
     private String department;

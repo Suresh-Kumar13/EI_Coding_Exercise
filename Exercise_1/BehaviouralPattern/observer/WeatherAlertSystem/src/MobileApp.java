@@ -1,4 +1,3 @@
-// MobileApp.java
 
 public class MobileApp implements WeatherObserver {
     private String appName;
@@ -9,6 +8,6 @@ public class MobileApp implements WeatherObserver {
 
     @Override
     public void update(String weatherCondition) {
-        System.out.println("[" + appName + "] shows alert: " + weatherCondition);
+        System.out.println( appName + " shows alert notification: " + weatherCondition);
     }
 }
