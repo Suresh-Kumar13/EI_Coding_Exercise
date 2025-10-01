@@ -90,12 +90,7 @@ Scheduled task added
 Enter choice: 6
 Light 1 is off   (executed by scheduler)
 
----
-
-## Clone and Explore
-
-```bash
-# Clone repository
+# Clone and Explore
 git clone https://github.com/maaliniponraj/EI_Coding_Exercise.git
 cd EI_Coding_Exercise/SmartHomeSystem/src
 javac com/smarthome/**/*.java
