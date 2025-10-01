@@ -53,12 +53,14 @@ This project demonstrates **OOP principles** and the use of **Design Patterns** 
 
 ---
 
-### **Exceptions **  
+### **Exceptions**  
 - **InvalidInputException:** Thrown for invalid input formats.  
 - **InvalidActionException:** Thrown for unsupported or wrong actions.  
 - **DeviceNotFoundException:** Thrown when a device with a given ID doesn’t exist.  
 
-## ▶️ Sample Run  
+---
+
+## Sample Run  
 
 ```text
 --- Smart Home Menu ---
@@ -90,7 +92,8 @@ Scheduled task added
 Enter choice: 6
 Light 1 is off   (executed by scheduler)
 
-# Clone and Explore
+`````
+## Clone and Explore
 git clone https://github.com/maaliniponraj/EI_Coding_Exercise.git
 cd EI_Coding_Exercise/SmartHomeSystem/src
 javac com/smarthome/**/*.java
