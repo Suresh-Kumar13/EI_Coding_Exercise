@@ -17,8 +17,7 @@ This project demonstrates two **Creational Design Patterns** with practical, rea
 - **NotificationFactory:** Responsible for creating the appropriate notification object.
 - **FactoryPatternDemo:** Client code that demonstrates the use of the factory.
 
-**Sample Output Screenshot**
-![Factory Pattern Output](screenshots/factory_output.png)
+
 
 ---
 
@@ -32,8 +31,7 @@ A single **JobScheduler** instance manages all jobs (EmailJob, DataBackupJob, et
 - **JobScheduler (Singleton):** Manages the job queue and ensures only one instance exists.
 - **SingletonJobSchedulerDemo:** Client code that demonstrates the singleton in action.
 
-**Sample Output Screenshot**
-![Singleton Pattern Output](screenshots/singleton_output.png)
+
 
 ---
 
@@ -41,7 +39,7 @@ A single **JobScheduler** instance manages all jobs (EmailJob, DataBackupJob, et
 
 ```bash
 # Clone repository
-git clone https://github.com/Suresh-Kumar13/EI_Coding_Exercise.git
+git clone https://github.com/maaliniponraj/EI_Coding_Exercise.git
 cd EI_Coding_Exercise/Exercise1
 
 # Explore Factory Pattern

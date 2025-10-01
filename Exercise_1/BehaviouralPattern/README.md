@@ -9,7 +9,7 @@ This project demonstrates two **Behavioral Design Patterns** with practical, rea
 
 ---
 
-### Chain of Responsibility – Payment Processing System
+### Chain of Responsibility - Payment Processing System
 
 A payment request flows through multiple checks (Card Validation → Fraud Check → Balance Check → Final Approval).  
 Each handler performs its responsibility and passes the request forward if valid.  
@@ -23,12 +23,10 @@ Each handler performs its responsibility and passes the request forward if valid
 - **FinalPaymentHandler:** Completes payment processing if all checks pass.  
 - **CORDemo:** Client code that sets up the chain and runs test cases.  
 
-**Sample Output Screenshot**  
-![CoR Output](screenshots/cor_output.png)  
 
 ---
 
-### Observer Pattern – Weather Alert System
+### Observer Pattern - Weather Alert System
 
 A **WeatherStation** acts as the subject. It notifies all registered observers whenever the weather condition changes.  
 
@@ -40,8 +38,6 @@ A **WeatherStation** acts as the subject. It notifies all registered observers w
 - **GovernmentDepartment:** Observer representing disaster management.  
 - **ObserverDemo:** Client code that attaches observers and simulates weather changes.  
 
-**Sample Output Screenshot**  
-![Observer Output](screenshots/observer_output.png)  
 
 ---
 
@@ -49,7 +45,7 @@ A **WeatherStation** acts as the subject. It notifies all registered observers w
 
 ```bash
 # Clone repository
-git clone https://github.com/Suresh-Kumar13/EI_Coding_Exercise.git
+git clone https://github.com/maaliniponraj/EI_Coding_Exercise.git
 cd EI_Coding_Exercise/Exercise1
 
 # Explore Chain of Responsibility

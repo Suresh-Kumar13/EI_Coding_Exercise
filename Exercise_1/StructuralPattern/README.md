@@ -23,7 +23,6 @@ Here, a simple AudioPlayer can play only MP3 files. By using an **Adapter**, it 
 - **AudioPlayer:** Client-facing player that delegates to MediaAdapter for unsupported formats.  
 - **AdapterDemo:** Demonstrates the usage of the adapter pattern.  
 
-### Sample Output
 
 ---
 
@@ -41,7 +40,6 @@ Here, a SimpleCoffee can be enhanced with additional toppings like Milk, Sugar, 
 - **WhippedCreamDecorator:** Adds whipped cream description and cost.  
 - **DecoratorDemo:** Demonstrates combining multiple decorators dynamically.  
 
-### Sample Output
 
 ---
 
@@ -49,7 +47,7 @@ Here, a SimpleCoffee can be enhanced with additional toppings like Milk, Sugar, 
 
 ```bash
 # Clone repository
-git clone https://github.com/Suresh-Kumar13/EI_Coding_Exercise.git
+git clone https://github.com/maaliniponraj/EI_Coding_Exercise.git
 cd EI_Coding_Exercise/Exercise1
 
 # Explore Adapter Pattern

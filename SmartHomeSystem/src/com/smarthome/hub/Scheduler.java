@@ -10,10 +10,9 @@ import java.util.*;
 public class Scheduler {
     private List<ScheduledTask> tasks = new ArrayList<>();
 
-    // Add a task with validation
     public void addTask(int deviceId, String timeStr, String action) throws InvalidInputException {
         try {
-            LocalTime time = LocalTime.parse(timeStr); // parse HH:MM
+            LocalTime time = LocalTime.parse(timeStr); 
             if (!(action.equalsIgnoreCase("on") || action.equalsIgnoreCase("off"))) {
                 throw new InvalidInputException("Invalid action for scheduling: " + action);
             }
@@ -24,34 +23,32 @@ public class Scheduler {
         }
     }
 
-    // Background thread to check tasks every minute
-    public void runScheduler(SmartHomeHub hub) {
-        new Thread(() -> {
-            while (true) {
-                LocalTime now = LocalTime.now().withSecond(0).withNano(0);
-                Iterator<ScheduledTask> iterator = tasks.iterator();
-                while (iterator.hasNext()) {
-                    ScheduledTask task = iterator.next();
-                    if (task.time.equals(now)) {
-                        try {
-                            hub.controlDevice(task.deviceId, task.action);
-                        } catch (Exception e) {
-                            LoggerUtil.log("Scheduler Error: " + e.getMessage());
-                        }
-                        iterator.remove();
-                    }
-                }
-                try { Thread.sleep(60000); } catch (InterruptedException e) { break; }
+    public void checkAndRunTasks(SmartHomeHub hub) {
+    LocalTime now = LocalTime.now().withSecond(0).withNano(0);
+    Iterator<ScheduledTask> iterator = tasks.iterator();
+
+    while (iterator.hasNext()) {
+        ScheduledTask task = iterator.next();
+
+        if (!task.time.isAfter(now)) {
+            try {
+                hub.controlDevice(task.deviceId, task.action);
+                LoggerUtil.log("Executed scheduled task: " + task);
+            } catch (Exception e) {
+                LoggerUtil.log("Scheduler Error: " + e.getMessage());
             }
-        }).start();
+            iterator.remove(); 
+        }
     }
+}
 
-    // New: return all scheduled tasks
+
+
     public List<ScheduledTask> getScheduledTasks() {
-        return new ArrayList<>(tasks); // return copy to avoid modification
+        return new ArrayList<>(tasks);
     }
 
-    // Inner class
+  
     public static class ScheduledTask {
         int deviceId;
         LocalTime time;

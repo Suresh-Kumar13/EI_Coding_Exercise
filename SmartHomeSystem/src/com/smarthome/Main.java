@@ -13,9 +13,11 @@ public class Main {
     public static void main(String[] args) {
         SmartHomeHub hub = new SmartHomeHub();
         Scanner sc = new Scanner(System.in);
+        int choice =0;
 
-        while (true) {
+        while (choice!=9) {
             try {
+                hub.runScheduledTasks();
                 System.out.println("\n--- Smart Home Menu ---");
                 System.out.println("1. Add Device");
                 System.out.println("2. Remove Device");
@@ -28,7 +30,7 @@ public class Main {
                 System.out.println("9. Exit");
                 System.out.print("Enter choice: ");
 
-                int choice = sc.nextInt();
+                choice = sc.nextInt();
 
                 switch (choice) {
                     case 1:
@@ -100,7 +102,7 @@ public class Main {
                 System.out.println("Error: " + e.getMessage());
             } catch (InputMismatchException e) {
                 System.out.println("Error: Please enter numbers where required.");
-                sc.nextLine(); // clear buffer
+                sc.nextLine(); 
             } catch (Exception e) {
                 System.out.println("Unexpected Error: " + e.getMessage());
             }

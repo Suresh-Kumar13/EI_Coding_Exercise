@@ -12,9 +12,7 @@ public class SmartHomeHub {
     private List<Trigger> triggers = new ArrayList<>();
     private Scheduler scheduler = new Scheduler();
 
-    public SmartHomeHub() {
-        scheduler.runScheduler(this);
-    }
+    
 
     public void addDevice(SmartDevice device) {
         devices.add(device);
@@ -70,7 +68,10 @@ public class SmartHomeHub {
         }
     }
 
-    // New: show all scheduled tasks
+    public void runScheduledTasks() {
+    scheduler.checkAndRunTasks(this);
+}
+
     public void showScheduledTasks() {
         List<Scheduler.ScheduledTask> scheduledTasks = scheduler.getScheduledTasks();
         if (scheduledTasks.isEmpty()) {
@@ -83,7 +84,6 @@ public class SmartHomeHub {
         }
     }
 
-    // New: show all triggers
     public void showTriggers() {
         if (triggers.isEmpty()) {
             System.out.println("No triggers added.");

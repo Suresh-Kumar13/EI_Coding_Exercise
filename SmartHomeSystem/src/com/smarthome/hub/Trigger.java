@@ -27,7 +27,6 @@ public class Trigger {
 
     public String getDescription() { return description; }
 
-    // Observer evaluation
     public void evaluate(List<SmartDevice> devices, SmartHomeHub hub) {
         for (SmartDevice d : devices) {
             if (d instanceof Thermostat) {
